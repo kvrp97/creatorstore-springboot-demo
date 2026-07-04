@@ -45,6 +45,7 @@ public class Order {
     @Column(name = "created_on")
     private LocalDateTime createdOn;
 
+    @PrePersist
     public void prePersist() {
         this.createdOn = LocalDateTime.now();
     }
