@@ -11,8 +11,8 @@
 	<groupId>lk.kvrp</groupId>
 	<artifactId>CreatorStore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>CreatorStore</name>
+	<description>CreatorStore</description>
 	<url/>
 	<licenses>
 		<license/>
