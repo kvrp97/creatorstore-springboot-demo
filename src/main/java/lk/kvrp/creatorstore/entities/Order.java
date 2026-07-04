@@ -1,5 +1,6 @@
 package lk.kvrp.creatorstore.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -25,6 +26,7 @@ public class Order {
     @Column(name = "customer_name", nullable = false)
     private String customerName;
 
+    @NotBlank(message = "Customer's email is required")
     @Column(name = "customer_email")
     private String customerEmail;
 
@@ -36,7 +38,8 @@ public class Order {
     @Column(name = "total_price", nullable = false)
     private BigDecimal totalPrice;
 
-    @OneToMany(mappedBy = "order")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
     @Column(name = "created_on")
