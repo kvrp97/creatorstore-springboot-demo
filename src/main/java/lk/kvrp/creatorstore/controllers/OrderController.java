@@ -21,10 +21,9 @@ public class OrderController {
         return orderService.createOrder(orderRequest);
     }
 
-    // Get all orders
+    @GetMapping
     public List<Order> getAllOrders() {
-        // TODO: to be implement
-        return null;
+        return orderService.getAllOrders();
     }
 
     @GetMapping("/{id}")
