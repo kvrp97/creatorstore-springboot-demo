@@ -5,10 +5,7 @@ import lk.kvrp.creatorstore.dto.OrderRequest;
 import lk.kvrp.creatorstore.entities.Order;
 import lk.kvrp.creatorstore.services.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,9 +27,8 @@ public class OrderController {
         return null;
     }
 
-    // Get order by id
-    public Order getOrderById() {
-        // TODO: to be implement
-        return null;
+    @GetMapping("/{id}")
+    public Order getOrderById(@PathVariable Long id) {
+        return orderService.getOrderById(id);
     }
 }
